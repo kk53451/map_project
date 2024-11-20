@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">map_project</string>
+    <!-- 네이버 맵 API 키 -->
+    <string name="naver_maps_client_id">iae823otxb</string>
+</resources>

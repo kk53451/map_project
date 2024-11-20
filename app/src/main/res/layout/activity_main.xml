@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 제목 (모구모구) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="모구모구"
+            android:gravity="start"
+            android:textSize="24sp"
+            android:layout_marginStart="16dp" />
+
+        <!-- 화면 전환 버튼 (추천 맛집 리스트로 이동) -->
+        <Button
+            android:id="@+id/transitionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="추천 맛집 리스트"/>
+    </LinearLayout>
+
+    <!-- 네이버 지도 (60% 화면 차지) -->
+    <com.naver.maps.map.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6" />
+
+    <!-- 스크롤 가능한 영역 (ListView, 버튼, 텍스트 포함) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- 내부 LinearLayout로 리스트뷰, 텍스트, 버튼을 감쌈 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <!-- 전체 맛집 리스트 갯수 표시 -->
+            <TextView
+                android:id="@+id/totalRestaurantCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전체 맛집 리스트 (0)"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- 새로운 맛집 추가 버튼 -->
+            <Button
+                android:id="@+id/addNewRestaurantButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="새로운 맛집 추가하기"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- 맛집 리스트 (동적으로 버튼으로 표시) -->
+            <LinearLayout
+                android:id="@+id/restaurantListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <!-- 이곳에 동적으로 버튼들이 추가됩니다. -->
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
